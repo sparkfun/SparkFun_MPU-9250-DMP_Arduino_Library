@@ -27,6 +27,9 @@ extern "C" {
 }
 
 static unsigned char mpu9250_orientation;
+static unsigned char tap_count;
+static unsigned char tap_direction;
+static bool _tap_available;
 static void orient_cb(unsigned char orient);
 static void tap_cb(unsigned char direction, unsigned char count);
 
@@ -450,8 +453,6 @@ inv_error_t MPU9250_DMP::dmpUpdateFifo(void)
 	}
 	
 	time = timestamp;
-	//SerialUSB.println("T: " + String(time));
-	//SerialUSB.println();
 	
 	return INV_SUCCESS;
 }
@@ -512,6 +513,23 @@ inv_error_t MPU9250_DMP::dmpSetTap(
     dmp_register_tap_cb(tap_cb);
 	
 	return INV_SUCCESS;
+}
+
+unsigned char MPU9250_DMP::getTapDir(void)
+{
+	_tap_available = false;
+	return tap_direction;
+}
+
+unsigned char MPU9250_DMP::getTapCount(void)
+{
+	_tap_available = false;
+	return tap_count;
+}
+
+bool MPU9250_DMP::tapAvailable(void)
+{
+	return _tap_available;
 }
 
 inv_error_t MPU9250_DMP::dmpSetOrientation(const signed char * orientationMatrix)
@@ -678,49 +696,12 @@ unsigned short MPU9250_DMP::orientation_row_2_scale(const signed char *row)
 		
 static void tap_cb(unsigned char direction, unsigned char count)
 {
-    switch (direction) {
-    case TAP_X_UP:
-        //SerialUSB.print("Tap X+ ");
-        break;
-    case TAP_X_DOWN:
-        //SerialUSB.print("Tap X- ");
-        break;
-    case TAP_Y_UP:
-        //SerialUSB.print("Tap Y+ ");
-        break;
-    case TAP_Y_DOWN:
-        //SerialUSB.print("Tap Y- ");
-        break;
-    case TAP_Z_UP:
-        //SerialUSB.print("Tap Z+ ");
-        break;
-    case TAP_Z_DOWN:
-        //SerialUSB.print("Tap Z- ");
-        break;
-    default:
-        return;
-    }
-    //SerialUSB.println(count);
-    return;
+	_tap_available = true;
+	tap_count = count;
+	tap_direction = direction;
 }
 
 static void orient_cb(unsigned char orient)
 {
 	mpu9250_orientation = orient;
-	switch (orient) {
-	case ANDROID_ORIENT_PORTRAIT:
-        //SerialUSB.println("Portrait");
-        break;
-	case ANDROID_ORIENT_LANDSCAPE:
-        //SerialUSB.println("Landscape");
-        break;
-	case ANDROID_ORIENT_REVERSE_PORTRAIT:
-        //SerialUSB.println("Reverse Portrait");
-        break;
-	case ANDROID_ORIENT_REVERSE_LANDSCAPE:
-        //SerialUSB.println("Reverse Landscape");
-        break;
-	default:
-		return;
-	}
 }
