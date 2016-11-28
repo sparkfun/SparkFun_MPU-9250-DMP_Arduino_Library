@@ -61,16 +61,15 @@
 #define get_ms  uc3l0_get_clock_ms
 #define log_i       MPL_LOGI
 #define log_e       MPL_LOGE
-
-//#elif defined __SAMD21G18A__ //! Begin new
 #elif defined ARDUINO //! Begin new
+
 #include <Arduino.h>
-#include "../../../util/samd_mpu9250_i2c.h"
-#include "../../../util/samd_mpu9250_clk.h"
+#include "../../../util/arduino_mpu9250_i2c.h"
+#include "../../../util/arduino_mpu9250_clk.h"
 #define i2c_write(a, b, c, d) arduino_i2c_write(a, b, c, d)
 #define i2c_read(a, b, c, d)  arduino_i2c_read(a, b, c, d)
-#define delay_ms  samd21_delay_ms
-#define get_ms    samd21_get_clock_ms
+#define delay_ms  arduino_delay_ms
+#define get_ms    arduino_get_clock_ms
 #define log_i     _MLPrintLog
 #define log_e     _MLPrintLog //! End new
 	

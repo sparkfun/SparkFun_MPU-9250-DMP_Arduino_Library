@@ -1,5 +1,20 @@
-/*
- */
+/******************************************************************************
+MPU9250_RegisterMap.h - MPU-9250 Digital Motion Processor Arduino Library 
+Jim Lindblom @ SparkFun Electronics
+original creation date: November 23, 2016
+https://github.com/sparkfun/SparkFun_MPU9250_DMP_Arduino_Library
+
+This library implements motion processing functions of Invensense's MPU-9250.
+It is based on their Emedded MotionDriver 6.12 library.
+	https://www.invensense.com/developers/software-downloads/
+
+Development environment specifics:
+Arduino IDE 1.6.12
+SparkFun 9DoF Razor IMU M0
+
+Supported Platforms:
+- ATSAMD21 (Arduino Zero, SparkFun SAMD21 Breakouts)
+******************************************************************************/
 #ifndef _MPU9250_REGISTER_MAP_H_
 #define _MPU9250_REGISTER_MAP_H_
 

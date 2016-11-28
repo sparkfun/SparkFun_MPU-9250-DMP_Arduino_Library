@@ -16,8 +16,8 @@ Supported Platforms:
 - ATSAMD21 (Arduino Zero, SparkFun SAMD21 Breakouts)
 ******************************************************************************/
 #include "SparkFunMPU9250-DMP.h"
-#include "util/Samd_mpu9250_i2c.h"
-#include "util/Samd_mpu9250_log.h"
+//#include "util/Samd_mpu9250_i2c.h"
+//#include "util/Samd_mpu9250_log.h"
 #include "MPU9250_RegisterMap.h"
 
 extern "C" {

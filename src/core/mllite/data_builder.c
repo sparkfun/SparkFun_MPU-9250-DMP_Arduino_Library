@@ -27,7 +27,7 @@
 #include "message_layer.h"
 #include "results_holder.h"
 
-#include "../../util/samd_mpu9250_log.h"
+#include "../../util/arduino_mpu9250_log.h"
 #include "../driver/include/log.h"
 #undef MPL_LOG_TAG
 #define MPL_LOG_TAG "MPL"
