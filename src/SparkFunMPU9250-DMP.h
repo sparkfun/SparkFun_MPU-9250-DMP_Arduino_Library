@@ -27,26 +27,15 @@ Supported Platforms:
 #define AK8963_SECONDARY
 #define COMPASS_ENABLED
 
-// Create definitions for the types used in the Invensense MPL library:
-#define __u8 uint8_t
-#define __u16 uint16_t
-#define __u32 uint32_t
-#define __s8 int8_t
-#define __s16 int16_t
-#define __s32 int32_t
-#define __s64 int64_t
-
-// Include the Invensense MPL library:
+// Include the Invensense MPU9250 driver and DMP keys:
 extern "C" {
-#include "core/driver/eMPL/inv_mpu.h"
-#include "core/driver/eMPL/inv_mpu_dmp_motion_driver.h"
-#include "core/mllite/invensense.h"
-#include "core/mpl/invensense_adv.h"
-#include "core/eMPL-hal/eMPL_outputs.h"
-#include "core/driver/include/mltypes.h"
-#include "core/driver/include/mpu.h"
-#include "core/driver/include/log.h"
+#include "util/inv_mpu.h"
+#include "util/inv_mpu_dmp_motion_driver.h"
 }
+
+typedef int inv_error_t;
+#define INV_SUCCESS 0
+#define INV_ERROR 0x20
 
 enum t_axisOrder {
 	X_AXIS, // 0

@@ -16,14 +16,10 @@ Supported Platforms:
 - ATSAMD21 (Arduino Zero, SparkFun SAMD21 Breakouts)
 ******************************************************************************/
 #include "SparkFunMPU9250-DMP.h"
-//#include "util/Samd_mpu9250_i2c.h"
-//#include "util/Samd_mpu9250_log.h"
 #include "MPU9250_RegisterMap.h"
 
 extern "C" {
-#include "core/driver/eMPL/inv_mpu.h"
-#include "core/driver/include/mltypes.h"
-#include "core/mpl/quaternion_supervisor.h"
+#include "util/inv_mpu.h"
 }
 
 static unsigned char mpu9250_orientation;
