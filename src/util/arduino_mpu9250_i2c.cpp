@@ -32,6 +32,7 @@ int arduino_i2c_write(unsigned char slave_addr, unsigned char reg_addr,
 	
 	return 0;
 }
+
 int arduino_i2c_read(unsigned char slave_addr, unsigned char reg_addr,
                        unsigned char length, unsigned char * data)
 {
@@ -43,7 +44,6 @@ int arduino_i2c_read(unsigned char slave_addr, unsigned char reg_addr,
 	{
 		data[i] = Wire.read();
 	}
-	Wire.endTransmission(true);
 	
 	return 0;
 }
