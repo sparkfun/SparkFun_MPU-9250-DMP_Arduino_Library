@@ -17,6 +17,8 @@ For help getting started with this library, refer to the [Using the MPU-9250 DMP
 
 **Note**: This library currently only supports and is tested on **SAMD processors**. It's a major part of the [SparkFun 9DoF Razor IMU M0](https://www.sparkfun.com/products/14001) firmware.
 
+If you're looking for an AVR-compatible (Arduino Uno, SparkFun RedBoard, etc.) library, check out the [SparkFun MPU-9250 Breakout Library](https://github.com/sparkfun/SparkFun_MPU-9250_Breakout_Arduino_Library), which provides access to all standard MPU-9250 sensor-readings.
+
 Repository Contents
 -------------------
 
