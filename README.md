@@ -1,6 +1,8 @@
 SparkFun MPU-9250 Digital Motion Processor (DMP) Arduino Library
 ========================================
 
+### I have forked this repository to edit and make changes for the ESP32. Will submit a PR when ready. This is a Work in Progress
+
 [![SparkFun MPU-9250](https://cdn.sparkfun.com//assets/parts/1/1/3/0/6/13762-00a.jpg)](https://www.sparkfun.com/products/13762)
 
 [*SparkFun MPU-9250 (SEN-13762)*](https://www.sparkfun.com/products/13762)

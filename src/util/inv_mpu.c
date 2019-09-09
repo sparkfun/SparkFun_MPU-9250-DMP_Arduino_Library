@@ -44,6 +44,9 @@
 #define i2c_read(a, b, c, d)  arduino_i2c_read(a, b, c, d)
 #define delay_ms  arduino_delay_ms
 #define get_ms    arduino_get_clock_ms
+// Added by rupin to enable ESP32 compatibility 
+#define min(a,b)    a<b ? a : b
+
 #define log_i     _MLPrintLog
 #define log_e     _MLPrintLog 
 static inline int reg_int_cb(struct int_param_s *int_param)
