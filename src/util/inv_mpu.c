@@ -24,6 +24,14 @@
 #include <math.h>
 #include "inv_mpu.h"
 
+#ifdef ESP32
+#define min(a,b) ((a)<(b)?(a):(b))
+#endif
+
+#ifdef ESP8266
+#define min(a,b) ((a)<(b)?(a):(b))
+#endif
+
 /* The following functions must be defined for this platform:
  * i2c_write(unsigned char slave_addr, unsigned char reg_addr,
  *      unsigned char length, unsigned char const *data)
