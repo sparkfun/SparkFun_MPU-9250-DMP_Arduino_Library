@@ -1,4 +1,4 @@
-/*
+*
  $License:
     Copyright (C) 2011-2012 InvenSense Corporation, All Rights Reserved.
     See included License.txt for License information.
@@ -93,6 +93,14 @@ static inline int reg_int_cb(struct int_param_s *int_param)
 #endif
 
 //static int set_int_enable(unsigned char enable);
+
+// cf. https://github.com/NicHub/mpu9250-esp32
+#ifndef min
+#define min(X,Y) (((X) < (Y)) ? (X) : (Y))
+#endif
+#ifndef max
+#define max(X,Y) (((X) > (Y)) ? (X) : (Y))
+#endif
 
 /* Hardware registers needed by driver. */
 struct gyro_reg_s {
