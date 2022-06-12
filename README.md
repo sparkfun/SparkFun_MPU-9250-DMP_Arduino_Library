@@ -1,8 +1,7 @@
 SparkFun MPU-9250 Digital Motion Processor (DMP) Arduino Library
 ========================================
 
-![SparkFun MPU-9250](https://cdn.sparkfun.com/assets/parts/1/1/3/0/6/13762-SparkFun_IMU_Breakout_-_MPU-9250-00.jpg)
-
+[SparkFun MPU-9250](https://cdn.sparkfun.com/assets/parts/1/1/3/0/6/13762-SparkFun_IMU_Breakout_-_MPU-9250-00.jpg)
 
 [*SparkFun MPU-9250 (SEN-13762)*](https://www.sparkfun.com/products/13762)
 
@@ -16,7 +15,7 @@ Advanced Arduino library for the Invensense MPU-9250 inertial measurement unit (
 
 For help getting started with this library, refer to the [Using the MPU-9250 DMP Arduino Library](https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide#using-the-mpu-9250-dmp-arduino-library) section of the 9DoF Razor IMU M0 Hookup Guide.
 
-**Note**: This library currently only supports and is tested on **SAMD processors**. It's a major part of the [SparkFun 9DoF Razor IMU M0](https://www.sparkfun.com/products/14001) firmware.
+**Note**: This library fork is tested on **SAMD, ESP8266, ESP32 and STM32L0 Arduino Cores**. It's a major part of the [SparkFun 9DoF Razor IMU M0](https://www.sparkfun.com/products/14001) firmware.
 
 If you're looking for an AVR-compatible (Arduino Uno, SparkFun RedBoard, etc.) library, check out the [SparkFun MPU-9250 Breakout Library](https://github.com/sparkfun/SparkFun_MPU-9250_Breakout_Arduino_Library), which provides access to all standard MPU-9250 sensor-readings.
 

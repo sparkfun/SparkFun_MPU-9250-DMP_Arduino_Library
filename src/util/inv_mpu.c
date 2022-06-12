@@ -38,14 +38,20 @@
  */
 #include <Arduino.h>
 #define MPU9250
+#define MPU_I2C_ADR 0x69
 #include "arduino_mpu9250_i2c.h"
 #include "arduino_mpu9250_clk.h"
 #define i2c_write(a, b, c, d) arduino_i2c_write(a, b, c, d)
 #define i2c_read(a, b, c, d)  arduino_i2c_read(a, b, c, d)
 #define delay_ms  arduino_delay_ms
 #define get_ms    arduino_get_clock_ms
-#define log_i     _MLPrintLog
-#define log_e     _MLPrintLog 
+// Added by rupin to enable ESP32 compatibility 
+#if !defined (ESP32)
+    #define log_i     _MLPrintLog
+    #define log_e     _MLPrintLog
+#else
+    #define min(a,b)    a<b ? a : b
+#endif
 static inline int reg_int_cb(struct int_param_s *int_param)
 {
 	
@@ -433,7 +439,7 @@ const struct gyro_reg_s reg = {
 #endif
 };
 const struct hw_s hw = {
-    .addr           = 0x68,
+    .addr           = MPU_I2C_ADR,
     .max_fifo       = 1024,
     .num_reg        = 118,
     .temp_sens      = 340,
@@ -513,7 +519,7 @@ const struct gyro_reg_s reg = {
 #endif
 };
 const struct hw_s hw = {
-    .addr           = 0x68,
+    .addr           = MPU_I2C_ADR,
     .max_fifo       = 1024,
     .num_reg        = 128,
     .temp_sens      = 321,
