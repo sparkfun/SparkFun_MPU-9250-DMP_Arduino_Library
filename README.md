@@ -1,7 +1,7 @@
 SparkFun MPU-9250 Digital Motion Processor (DMP) Arduino Library
 ========================================
 
-[![SparkFun MPU-9250](https://cdn.sparkfun.com//assets/parts/1/1/3/0/6/13762-00a.jpg)](https://www.sparkfun.com/products/13762)
+[SparkFun MPU-9250](https://cdn.sparkfun.com/assets/parts/1/1/3/0/6/13762-SparkFun_IMU_Breakout_-_MPU-9250-00.jpg)
 
 [*SparkFun MPU-9250 (SEN-13762)*](https://www.sparkfun.com/products/13762)
 
